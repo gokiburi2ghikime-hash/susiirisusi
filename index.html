@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★☆カレーライス入り寿司の館☆★ - Welcome to the Future of Sushi!</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ffeb3b, #ff9800, #4caf50, #2196f3);
+            background-size: 400% 400%;
+            animation: gentleRainbow 5s ease infinite;
+            font-family: 'Comic Sans MS', cursive;
+            margin: 0;
+            padding: 10px;
+            color: #000;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        body::before {
+            content: "カレーライス入り寿司 カレーライス入り寿司 カレーライス入り寿司 カレーライス入り寿司 カレーライス入り寿司 カレーライス入り寿司 カレーライス入り寿司 カレーライス入り寿司 ";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 32px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.08);
+            z-index: -1;
+            word-wrap: break-word;
+            animation: slowTextFloat 30s linear infinite;
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+        
+        @keyframes gentleRainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes slowTextFloat {
+            0% { transform: translateY(100vh) rotate(-10deg); }
+            100% { transform: translateY(-100vh) rotate(-10deg); }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffff99;
+            border: 5px dashed #ff6600;
+            padding: 20px;
+            box-shadow: 10px 10px 0 #ff9999;
+        }
+        
+        .header {
+            text-align: center;
+            background: #ff69b4;
+            border: 3px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            transform: rotate(-1deg);
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 0 #000;
+            animation: gentleBlink 2s infinite;
+        }
+        
+        @keyframes gentleBlink {
+            0%, 70% { opacity: 1; }
+            85% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #000;
+            margin-top: 10px;
+        }
+        
+        .navigation {
+            background: #00ff99;
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            background: #ff3366;
+            color: #fff;
+            padding: 5px 15px;
+            margin: 5px;
+            border: 2px solid #000;
+            text-decoration: none;
+            font-weight: bold;
+            transform: rotate(2deg);
+        }
+        
+        .nav-button:hover {
+            transform: rotate(-2deg);
+            background: #ff6600;
+        }
+        
+        .content {
+            background: #ffffff;
+            border: 3px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .menu-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        
+        .menu-item {
+            background: #ffd700;
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+            transform: rotate(-1deg);
+            box-shadow: 5px 5px 0 #888;
+        }
+        
+        .menu-item:nth-child(even) {
+            transform: rotate(1deg);
+            background: #87ceeb;
+        }
+        
+        .price {
+            font-size: 18px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .marquee {
+            background: #000;
+            color: #00ff00;
+            padding: 10px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .marquee span {
+            display: inline-block;
+            animation: slowScroll 20s linear infinite;
+        }
+        
+        @keyframes slowScroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .visitor-counter {
+            background: #000;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            border: 2px solid #00ff00;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            background: #800080;
+            color: #fff;
+            padding: 15px;
+            border: 3px solid #000;
+        }
+        
+        .emoji {
+            font-size: 24px;
+            animation: gentleSpin 3s linear infinite;
+            display: inline-block;
+        }
+        
+        @keyframes gentleSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 600px) {
+            .menu-item {
+                width: 200px;
+            }
+            .title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">★☆カレーライス入り寿司の館☆★</div>
+            <div class="subtitle">〜究極の謎料理専門店〜</div>
+        </div>
+        
+        <div class="navigation">
+            <a href="#menu" class="nav-button">謎メニュー</a>
+            <a href="#about" class="nav-button">店について</a>
+            <a href="#gallery" class="nav-button">ギャラリー</a>
+            <a href="#contact" class="nav-button">連絡先</a>
+            <a href="#guestbook" class="nav-button">作るのめんどくさくなったよ</a>
+        </div>
+        
+        <div class="marquee">
+            <span>🍛🍣 本日限定！トマト入りプチトマト寿司が新登場！🍣🍛 営業時間：11:00-22:00 定休日：毎週水曜日 🍛🍣</span>
+        </div>
+        
+        <div class="content">
+            <h2>🌟 本日の謎メニュー 🌟</h2>
+            <div class="menu-showcase">
+                <div class="menu-item">
+                    <div class="emoji">🍣</div>
+                    <h3>カレーライス入り寿司</h3>
+                    <p>寿司の中にカレーライスが入った革新的な一品！シャリの代わりにライス、ネタの下にカレー！</p>
+                    <div class="price">¥680</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🍅</div>
+                    <h3>トマト入りプチトマト寿司</h3>
+                    <p>プチトマトの中にトマトを詰めた謎の構造！どうやって入れたかは企業秘密です。</p>
+                    <div class="price">¥420</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🍜</div>
+                    <h3>ラーメン入りうどん寿司</h3>
+                    <p>うどんの中にラーメンを入れて寿司にしました！麺類の三重奏をお楽しみください。</p>
+                    <div class="price">¥890</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🍞</div>
+                    <h3>パン入り食パン握り</h3>
+                    <p>食パンの中に小さなパンを詰め込んで握り寿司風に！炭水化物の暴力です。</p>
+                    <div class="price">¥350</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🍕</div>
+                    <h3>ピザ入りピザ巻き</h3>
+                    <p>ピザをピザで巻いた意味不明な創作料理！チーズが二倍、カロリーも二倍！</p>
+                    <div class="price">¥1200</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🥤</div>
+                    <h3>ジュース入りゼリー寿司</h3>
+                    <p>ゼリーの中にジュースを封入！噛むと中からジュースが飛び出す危険な寿司です。</p>
+                    <div class="price">¥480</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🍱</div>
+                    <h3>弁当入り弁当箱寿司</h3>
+                    <p>弁当箱の中に小さな弁当を入れて寿司ネタに！メタ弁当の誕生です。</p>
+                    <div class="price">¥1500</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🥟</div>
+                    <h3>餃子入り餃子包み寿司</h3>
+                    <p>餃子の皮で餃子を包んでさらに寿司に！中華と和食の禁断の融合。</p>
+                    <div class="price">¥720</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="emoji">🍰</div>
+                    <h3>ケーキ入りケーキ寿司</h3>
+                    <p>ケーキの中にミニケーキを仕込んだデザート寿司！甘さの無限ループ。</p>
+                    <div class="price">¥980</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h2 id="about">🏪 お店について</h2>
+            <p>1999年創業の<strong>カレーライス入り寿司の館</strong>は、論理を超えた料理を提供する専門店です！</p>
+            <p>「食べ物の中に同じ食べ物を入れたらどうなるんだろう？」という素朴な疑問から始まったこのお店は、
+            今では<strong>年間来客数114514万人</strong>の隠れた名店となりました！</p>
+            
+            <h3>🎯 こだわり</h3>
+            <ul>
+                <li>すべての料理に「入れ子構造」を採用</li>
+                <li>素材は可能な限り新鮮なものを使用</li>
+                <li>どうやって作っているかは永遠の謎</li>
+                <li>栄養バランスは一切考慮していません</li>
+            </ul>
+        </div>
+        
+        
+        <div class="footer">
+            <p>📍 住所：東京都謎区不思議町123-456 入れ子ビル∞F</p>
+            <p>📞 TEL：現在、電話は4次元に転送されています</p>
+            <p>🍣年齢123歳</p>
+            <p style="font-size: 12px; margin-top: 15px;">
+                Copyright © 1999-2025 カレーライス入り寿司の館 All Rights Reserved.<br>
+                ※このサイトはフィクションです。実在の店舗・人物とは一切関係ありません
+            </p>
+        </div>
+    </div>
+</body>
+</html>
